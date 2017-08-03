@@ -9,13 +9,19 @@
 	<form  id="form" action="registro" method="post" enctype="multipart/form-data">
 		<input type="file"  name="filetoupload"><br>
 		<input type="text" name="nickname"><br><br>
-		<button onclick="registrado()" type="submit">Entrar</button>
+		<button type="submit">Entrar</button><br>
 	</form>
+			<button onclick="irChat()">Ir directo al chat</button>
 
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/alertify/alertify.min.js"></script>
 	<script>
+
+	function irChat(){
+		location.href=location.href+"chat";
+	}
+
 	
 	</script>
 
