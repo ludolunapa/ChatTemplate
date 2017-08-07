@@ -164,6 +164,9 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/ingresar.html');
 });
 
+app.get('/dev', function(req, res){
+  res.sendFile(__dirname + '/newChat.html');
+});
 
 app.use(express.static(__dirname + '/public'));
 
