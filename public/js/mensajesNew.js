@@ -10,13 +10,10 @@
           socket.on('usrConectado',function(usr){
             var html='<li class="left clearfix"><span class="chat-img1 pull-left"><img src="/upload/server.jpg" alt="User Avatar" class="img-circle"></span><div class="chat-body1 clearfix"> <p>Se conectó '+usr+'.</p><div class="chat_time pull-right"></div></div></li>';
             $('#chatList').append(html);
-            
             var aDiv=document.getElementById('chatLog');
             aDiv.scrollTop=aDiv.scrollHeight; //scroll al fondo ddel mensaje
-
             var audio = new Audio('/res/sounds/sms-alert-3-daniel_simon.mp3');
             audio.play();
-
           });
 
           socket.on('se nos fue', function(usrDes,time){
@@ -28,11 +25,9 @@
             aDiv.scrollTop=aDiv.scrollHeight; //scroll al fondo ddel mensaje
             }
           });
-
           socket.on('tu clave',function(socketid){
               sessionStorage.usrID=socketid;
           });
-
           /*        
           $('form').submit(function(){
             var mensaje=$('#m').val();
@@ -81,7 +76,6 @@
             var oldLog=JSON.parse(log);
             cargaLog(oldLog);
           });
-
           var msg=null;
           var aux=0;
           socket.on('este wey esta escribiendo', function(nom){
@@ -107,7 +101,6 @@
                 });
                 //console.log(msg.element.ownerDocument);
               }
-              
           });
 
           window.addEventListener("beforeunload", function (e) {
@@ -125,7 +118,6 @@
           });
 
           }); // function principal
-
         function cargaLog(newLog){
             //newLog is an object
             newLog.log.forEach(function(iter){
