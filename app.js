@@ -148,16 +148,17 @@ app.post('/registro', upload.single('filetoupload'),function(req,res){
     //res.redirect(200,'/chat');
     //return res.end('<img src="/upload/temp/'+req.file.filename+'" alt="Usr_img" heigth="40" width="40">');
 
-        Jimp.read(__dirname+"/public/upload/temp/"+req.file.filename, function (err, lenna) {
+        Jimp.read(__dirname+"/public/upload/temp/"+req.file.filename, function (err, img) {
     if (err) throw err;
-    lenna.resize(40, 40)            // resize
+    img.resize(40, 40)            // resize
          .quality(60)                 // set JPEG quality
          //.greyscale()                 // set greyscale
          .write(__dirname+"/public/upload/temp/"+req.file.filename); // save
     });
 
     //res.sendFile(__dirname + '/index.html');
-    res.sendFile(__dirname + '/newChat.html');
+    //res.sendFile(__dirname + '/newChat.html');
+    res.redirect('/chat');
      
 });
 

@@ -200,3 +200,8 @@
 }
 
 .ajs-message.ajs-custom { color: #31708f;  background-color: #E0F6FC;  border-color: #31708f; font-weight: bold;}
+
+#chatLog {
+  min-height:70vh;
+  min-width: :50vh;
+}
