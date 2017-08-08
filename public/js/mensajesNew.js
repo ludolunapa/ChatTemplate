@@ -20,11 +20,13 @@
           });
 
           socket.on('se nos fue', function(usrDes,time){
+            if(usrID!==sessionStorage.usrID){
             var html='<li class="left clearfix"><span class="chat-img1 pull-left"><img src="/upload/server.jpg" alt="User Avatar" class="img-circle"></span><div class="chat-body1 clearfix"> <p>'+usrDes+' se ha desconectado.</p><div class="chat_time pull-right">'+time+'</div></div></li>';
             $('#chatList').append(html);
             //window.scrollTo(0, document.body.scrollHeight);
             var aDiv=document.getElementById('chatLog');
             aDiv.scrollTop=aDiv.scrollHeight; //scroll al fondo ddel mensaje
+            }
           });
 
           socket.on('tu clave',function(socketid){
@@ -93,16 +95,16 @@
               }, 2200);
             aux++;
             */
+              var noti=nom+' esta escribiendo...';
+              if(nom===person){noti='Estas escribiendo...'}
 
-              
-               alertify.set('notifier','position', 'top-center');
+               alertify.set('notifier','position', 'top-left');
               if(msg===null){
-                msg=alertify.message(nom+' esta escribiendo.',1.2, function(){
+                msg=alertify.notify(noti,'custom',1.2, function(){
                   //msg.dismiss();
                   msg=null;
 
                 });
-
                 //console.log(msg.element.ownerDocument);
               }
               
