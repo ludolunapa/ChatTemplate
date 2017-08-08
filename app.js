@@ -156,11 +156,13 @@ app.post('/registro', upload.single('filetoupload'),function(req,res){
          .write(__dirname+"/public/upload/temp/"+req.file.filename); // save
     });
 
-    res.sendFile(__dirname + '/index.html');
+    //res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/newChat.html');
      
 });
 
 app.get('/', function(req, res){
+  
   res.sendFile(__dirname + '/ingresar.html');
 });
 
@@ -171,7 +173,8 @@ app.get('/dev', function(req, res){
 app.use(express.static(__dirname + '/public'));
 
 app.get('/chat', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+  //res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/newChat.html');
 });
 
 /* RECORDAR SIEMPRE:     IO = A TODOS SOCKET = a quien lo disparo
