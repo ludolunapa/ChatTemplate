@@ -75,29 +75,37 @@
 
           });
           socket.on('cargaLog', function(log){
-            console.log(log);
+            //console.log(log);
             var oldLog=JSON.parse(log);
             cargaLog(oldLog);
           });
 
-            var weyes=new Array();
-            var msg=null;
-            socket.on('este wey esta escribiendo', function(nom){
+          var msg=null;
+          var aux=0;
+          socket.on('este wey esta escribiendo', function(nom){
+            /*
+            var html='<li><div class="alert alert-info" role="alert">'+nom+' esta escribiendo. </div></li>';
+            $('#infoList').append(html);
+            console.log(aux);
+            setTimeout(function(){
+              $('#infoList :nth-child('+aux+')').remove();
+              aux--;
+              }, 2200);
+            aux++;
+            */
 
-
-
-
-              var div=document.getElementById('chatInfo');
-              var html='<li><div class="alert alert-info" role="alert"> <strong>Heads up!</strong> Un pendejón esta escribiendo. </div></li>'
-              $('#infoList').add(html);
-              /*
-               alertify.set('notifier','position', 'bottom-center');
+              
+               alertify.set('notifier','position', 'top-center');
               if(msg===null){
                 msg=alertify.message(nom+' esta escribiendo.',1.2, function(){
+                  //msg.dismiss();
                   msg=null;
+
                 });
+
+                //console.log(msg.element.ownerDocument);
               }
-              */
+              
           });
 
           window.addEventListener("beforeunload", function (e) {
