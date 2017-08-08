@@ -102,7 +102,7 @@
               if(msg===null){
                 msg=alertify.notify(noti,'custom',1.2, function(){
                   //msg.dismiss();
-                  msg=null;
+                  msg=null;//para que desaparesca y entre otro mensaje nuevo
 
                 });
                 //console.log(msg.element.ownerDocument);
